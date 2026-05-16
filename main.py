@@ -40,6 +40,21 @@ def delete(filename):
 
     return redirect("/")
 
+@app.route("/update", methods=["POST"])
+def update():
+    filename = request.form["filename"]
+    memo = request.form["memo"]
+
+    with open(f"memo/{filename}", "w", encoding="utf-8") as f:
+        f.write(memo)
+
+    return redirect("/")
+
+@app.route("/edit/<filename>")
+def edit(filename):
+    with open(f"memo/{filename}", "r", encoding="utf-8") as f:
+        content = f.read()
+    return render_template("edit.html", filename=filename, content=content)
 
 if __name__ == "__main__":
     app.run(debug=True)

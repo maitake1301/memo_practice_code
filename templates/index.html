@@ -25,6 +25,13 @@
                削除
             </a>
         </li>
+        {% for file in files %}
+<li>
+    <a href="/view/{{ file }}">{{ file }}</a>
+
+    <a href="/edit/{{ file }}">編集</a>
+</li>
+{% endfor %}
 
     {% endfor %}
     </ul>
@@ -52,5 +59,6 @@
     </form>
 
 </body>
+
 
 </html>
