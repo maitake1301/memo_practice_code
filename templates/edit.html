@@ -1,0 +1,13 @@
+<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8"></head>
+<h1>メモ編集</h1>
+
+<form action="/update" method="POST">
+    <input type="hidden" name="filename" value="{{ filename }}">
+
+    <textarea name="memo" rows="20" cols="60">{{ content }}</textarea>
+
+    <br>
+
+    <button type="submit">更新</button>
+</form>
