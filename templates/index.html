@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メモ帳</title>
+</head>
+
+<body>
+
+    <h1>貴方のメモ帳</h1>
+
+    <h2>メモ一覧</h2>
+
+    <ul>
+    {% for file in files %}
+
+        <li>
+            <a href="/view/{{ file }}">{{ file }}</a>
+
+            <a href="/delete/{{ file }}"
+               onclick="return confirm('削除しますか？')">
+               削除
+            </a>
+        </li>
+
+    {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>新規メモ作成</h2>
+
+    <form action="/save" method="POST">
+
+        <input type="text"
+               name="title"
+               placeholder="タイトルを入力してください">
+
+        <br><br>
+
+        <textarea name="memo"
+                  rows="20"
+                  cols="60"></textarea>
+
+        <br>
+
+        <button type="submit">保存</button>
+
+    </form>
+
+</body>
+
+</html>

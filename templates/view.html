@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>メモ表示</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>{{ filename }}</h1>
+
+    <p>{{ memo }}</p>
+
+    <button onclick="history.back()">戻る</button>
+
+</body>
+
+</html>
