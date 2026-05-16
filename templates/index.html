@@ -24,13 +24,12 @@
                onclick="return confirm('削除しますか？')">
                削除
             </a>
+            <a href="/edit/{{ file }}">編集</a>
         </li>
-        {% for file in files %}
-<li>
-    <a href="/view/{{ file }}">{{ file }}</a>
 
-    <a href="/edit/{{ file }}">編集</a>
-</li>
+
+        {% for file in files %}
+
 {% endfor %}
 
     {% endfor %}

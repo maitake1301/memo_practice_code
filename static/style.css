@@ -16,6 +16,11 @@ h2{
 li:hover {
     background-color: #f0f0f0;
 }
+li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
 ul {
     list-style: none;
