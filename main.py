@@ -56,5 +56,16 @@ def edit(filename):
         content = f.read()
     return render_template("edit.html", filename=filename, content=content)
 
+@app.route("/login", methods=["POST"])
+def login():
+
+    password = request.form["password"]
+
+    if password == "1301":
+        return redirect("/")
+
+    return "パスワードが違います"
+
+
 if __name__ == "__main__":
     app.run(debug=True)

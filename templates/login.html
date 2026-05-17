@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <headeer>
+        <time>2026-5-17</time>
+        <h1><em>ログイン</em>画面</h1>
+        <p>ログイン番号を入力してください</p>
+    </headeer>
+    <img src ="screen.png" alt="screen" width="200" height="200">
+    <form action="main.py" method="post">
+        <p>
+            <label>ログイン番号<input type="text" name="login" required></label>
+        </p>
+    </form>
+    <p><label><input type="checkbox"name="check">ログイン番号を保存する</label></p>
+</body>
+</html>
